@@ -28,6 +28,79 @@
                 text-align: center;
             }
 
+            /* --- Navigation bar --- */
+            .navbar {
+                background-color: #2b2b2b;
+            }
+
+            .nav-container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 0 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 1.5rem;
+                margin: 0;
+                padding: 0.75rem 0;
+            }
+
+            .nav-links a {
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .nav-links a:hover {
+                text-decoration: underline;
+            }
+
+            .nav-toggle {
+                display: none;
+            }
+
+            .nav-toggle-label {
+                display: none;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+                padding: 1rem 0;
+            }
+
+            .nav-toggle-label span {
+                width: 26px;
+                height: 3px;
+                background-color: #ffffff;
+                border-radius: 2px;
+            }
+
+            @media (max-width: 600px) {
+                .nav-toggle-label {
+                    display: flex;
+                }
+
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    gap: 0;
+                    width: 100%;
+                    padding: 0 0 0.75rem;
+                }
+
+                .nav-links li {
+                    padding: 0.5rem 0;
+                }
+
+                .nav-toggle:checked ~ .nav-links {
+                    display: flex;
+                }
+            }
+
             header img {
                 border-radius: 50%;
             }
@@ -66,6 +139,23 @@
     </head>
 
     <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutme.html">About Me</a></li>
+                    <li><a href="hello.html">Hello</a></li>
+                    <li><a href="https://github.com/Rania-305/oim_3690">GitHub</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <header>
             <h1>Rania Ishoof</h1>
             <p>Welcome to my homepage. I am a <a href="https://www.babson.edu/">Babson College</a> student interested in learning, creating, and finding practical ways to use technology.</p>

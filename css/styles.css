@@ -1,0 +1,22 @@
+body {
+    background-color: #dcd6f7;
+    font-family: "Times New Roman", Times, serif;
+    color: #2e2757;
+}
+
+h1 {
+    background-color: #6a5acd;
+    color: #ffffff;
+}
+
+h2 {
+    color: #4b3f9e;
+}
+
+a {
+    color: #3b28cc;
+}
+
+a:visited {
+    color: #6a5acd;
+}
