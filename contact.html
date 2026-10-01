@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <h1>Contact Us</h1>
+        <form action="https://oim.zhili.dev/echo/view" method="POST">
+            <fieldset>
+                <legend>Contact details</legend>
+
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" required autocomplete="name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9\-\+\s()]*" placeholder="e.g. 555-123-4567" autocomplete="tel">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required autocomplete="new-password">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required aria-describedby="message-hint"></textarea>
+                <small id="message-hint">Tell us how we can help.</small>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    </body>
+</html>
+
