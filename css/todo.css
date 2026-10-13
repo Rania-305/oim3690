@@ -23,7 +23,8 @@ h1 {
     margin: 1.5rem 0;
 }
 
-#todo-input {
+#todo-input,
+#todo-due {
     flex: 1;
     padding: 0.5rem;
     border: 1px solid #6a5acd;
@@ -71,6 +72,17 @@ h1 {
 #todo-list li.completed span {
     text-decoration: line-through;
     color: #8f88b8;
+}
+
+#todo-list li span.due-date {
+    flex: none;
+    font-size: 0.85rem;
+    color: #6a5acd;
+}
+
+#todo-list li span.due-date.overdue {
+    color: #a94442;
+    font-weight: bold;
 }
 
 #todo-list li button {

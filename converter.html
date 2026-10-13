@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="css/converter.css">
+</head>
+<body>
+    <main>
+        <h1>Unit Converter</h1>
+
+        <form id="converter-form">
+            <label for="category-select">Conversion type:</label>
+            <select id="category-select" name="category-select"></select>
+
+            <div class="unit-row">
+                <div>
+                    <label for="from-unit-select">From:</label>
+                    <select id="from-unit-select" name="from-unit-select"></select>
+                </div>
+
+                <button type="button" id="swap-button" aria-label="Swap units">&#8646;</button>
+
+                <div>
+                    <label for="to-unit-select">To:</label>
+                    <select id="to-unit-select" name="to-unit-select"></select>
+                </div>
+            </div>
+
+            <label for="value-input">Value:</label>
+            <input type="number" id="value-input" name="value-input" placeholder="e.g. 25" step="any" required>
+
+            <button type="submit">Convert</button>
+        </form>
+
+        <section id="result">
+            <p id="result-text">Enter a value above to see the conversion.</p>
+        </section>
+    </main>
+
+    <script src="js/converter.js"></script>
+</body>
+</html>

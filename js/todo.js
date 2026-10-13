@@ -2,6 +2,7 @@ const STORAGE_KEY = 'todo-items';
 
 const form = document.getElementById('todo-form');
 const input = document.getElementById('todo-input');
+const dueInput = document.getElementById('todo-due');
 const list = document.getElementById('todo-list');
 const emptyMessage = document.getElementById('todo-empty');
 
@@ -36,15 +37,31 @@ function render() {
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => deleteTodo(index));
 
-        item.append(checkbox, text, deleteButton);
+        item.append(checkbox, text);
+
+        if (todo.dueDate) {
+            const due = document.createElement('span');
+            due.className = 'due-date';
+            due.textContent = `Due: ${todo.dueDate}`;
+            if (!todo.completed && todo.dueDate < todayString()) {
+                due.classList.add('overdue');
+            }
+            item.appendChild(due);
+        }
+
+        item.appendChild(deleteButton);
         list.appendChild(item);
     });
 
     emptyMessage.classList.toggle('hidden', todos.length > 0);
 }
 
-function addTodo(text) {
-    todos.push({ text, completed: false });
+function todayString() {
+    return new Date().toISOString().slice(0, 10);
+}
+
+function addTodo(text, dueDate) {
+    todos.push({ text, dueDate: dueDate || null, completed: false });
     saveTodos();
     render();
 }
@@ -67,8 +84,9 @@ form.addEventListener('submit', (event) => {
     if (!text) {
         return;
     }
-    addTodo(text);
+    addTodo(text, dueInput.value);
     input.value = '';
+    dueInput.value = '';
     input.focus();
 });
 

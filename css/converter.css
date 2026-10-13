@@ -1,0 +1,103 @@
+body {
+    background-color: #f5f0dc;
+    background-image:
+        linear-gradient(to right, transparent 0, transparent 2.5rem, #d94f4f 2.5rem, #d94f4f 2.6rem, transparent 2.6rem),
+        repeating-linear-gradient(to bottom, transparent, transparent 1.6rem, #a9c9e8 1.6rem, #a9c9e8 1.7rem);
+    font-family: "Courier New", Courier, monospace;
+    color: #2b2b2b;
+}
+
+main {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+}
+
+h1 {
+    background-color: #1c1c1c;
+    background-image:
+        radial-gradient(circle at 20% 30%, #ffffff22 0, #ffffff22 2px, transparent 3px),
+        radial-gradient(circle at 60% 70%, #ffffff33 0, #ffffff33 3px, transparent 4px),
+        radial-gradient(circle at 80% 20%, #ffffff22 0, #ffffff22 2px, transparent 3px),
+        radial-gradient(circle at 40% 85%, #ffffff33 0, #ffffff33 2px, transparent 3px);
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: 2px;
+    border: 3px solid #d94f4f;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+#converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+#converter-form label {
+    font-weight: bold;
+    color: #d94f4f;
+}
+
+#value-input,
+#category-select,
+#from-unit-select,
+#to-unit-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #2b2b2b;
+    border-radius: 0;
+    background-color: transparent;
+    font-family: inherit;
+    color: #2b2b2b;
+}
+
+.unit-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.unit-row > div {
+    flex: 1;
+}
+
+#swap-button {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #2b2b2b;
+    border-radius: 4px;
+    background-color: #a9c9e8;
+    color: #2b2b2b;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+#swap-button:hover {
+    background-color: #8fb8dd;
+}
+
+#converter-form button[type="submit"] {
+    padding: 0.5rem 1rem;
+    border: 2px solid #2b2b2b;
+    border-radius: 4px;
+    background-color: #d94f4f;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#converter-form button[type="submit"]:hover {
+    background-color: #b83d3d;
+}
+
+#result {
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 2px dashed #a9c9e8;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 1.2rem;
+}
