@@ -8,6 +8,9 @@ This repository is for all of my classwork.
 ## Mini-Project 1
 Link: https://rania-305.github.io/Mini_Project_1/index.html
 
+## Mini-Project 2
+Link: https://rania-305.github.io/Mini-Project-2/index.html
+
 ```js
 const button = document.querySelector('#btn');
 button.addEventListener('click', () => {
