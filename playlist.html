@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/playlist.css">
+</head>
+<body>
+    <main>
+        <h1>Rania's Playlist</h1>
+
+        <div class="record-player">
+            <div class="turntable">
+                <div class="vinyl">
+                    <div class="vinyl-label">Rania's<br>Playlist</div>
+                </div>
+                <div class="tonearm"></div>
+            </div>
+        </div>
+
+        <form id="song-form">
+            <input type="text" id="song-input" placeholder="Song title">
+            <input type="text" id="artist-input" placeholder="Artist">
+            <button type="submit">Add Song</button>
+        </form>
+        <button id="shuffle-button" type="button">Shuffle</button>
+        <ul id="playlist-list"></ul>
+    </main>
+
+    <script src="js/js/playlist.js"></script>
+</body>
+</html>

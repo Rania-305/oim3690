@@ -1,0 +1,197 @@
+body {
+    background: linear-gradient(180deg, #1a0033 0%, #0d0221 100%);
+    font-family: "Orbitron", sans-serif;
+    color: #f5f5f5;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Audiowide", cursive;
+    font-size: 2rem;
+    color: #ff2ebd;
+    text-shadow:
+        0 0 6px #ff2ebd,
+        0 0 14px #00e5ff;
+    letter-spacing: 1px;
+}
+
+.record-player {
+    background: linear-gradient(145deg, #2d0a4e, #190633);
+    border: 2px solid #00e5ff;
+    border-radius: 12px;
+    padding: 2rem 1.5rem 3rem;
+    margin: 1.5rem auto;
+    box-shadow:
+        0 0 12px #00e5ff,
+        0 0 24px rgba(255, 46, 189, 0.4);
+}
+
+.turntable {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.vinyl {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background:
+        repeating-radial-gradient(circle, #0d0d0d 0, #0d0d0d 2px, #262626 3px, #0d0d0d 4px);
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.5);
+    animation: spin 2.5s linear infinite;
+}
+
+.vinyl-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff2ebd, #7b2ff7);
+    transform: translate(-50%, -50%);
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.vinyl-label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0d0d0d;
+    transform: translate(-50%, -50%);
+}
+
+.tonearm {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    width: 12px;
+    height: 140px;
+    background: linear-gradient(180deg, #00e5ff, #0097a7);
+    border-radius: 6px;
+    transform-origin: top center;
+    transform: rotate(25deg);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+}
+
+.tonearm::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: -6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #00e5ff;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#song-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 360px;
+    margin: 1.5rem auto;
+}
+
+#song-input,
+#artist-input {
+    flex: 1;
+    padding: 0.6rem;
+    border: 1px solid #00e5ff;
+    border-radius: 4px;
+    background-color: #190633;
+    color: #f5f5f5;
+    font-family: "Orbitron", sans-serif;
+}
+
+#song-input::placeholder,
+#artist-input::placeholder {
+    color: #9a8fc2;
+}
+
+#song-form button,
+#shuffle-button {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #ff2ebd, #7b2ff7);
+    color: #ffffff;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(255, 46, 189, 0.6);
+}
+
+#song-form button:hover,
+#shuffle-button:hover {
+    box-shadow: 0 0 14px rgba(255, 46, 189, 0.9);
+}
+
+#playlist-list {
+    list-style: none;
+    padding: 0;
+    max-width: 360px;
+    margin: 1.5rem auto 0;
+}
+
+#playlist-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    background-color: #190633;
+    border: 1px solid #00e5ff;
+    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.3);
+}
+
+.remove-button {
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0;
+    border: 1px solid #ff2ebd;
+    border-radius: 50%;
+    background-color: #7b2ff7;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.remove-button:hover {
+    background-color: #ff2ebd;
+}

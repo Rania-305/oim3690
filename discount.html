@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publix Savings Calculator</title>
+    <link rel="stylesheet" href="css/discount.css">
+</head>
+<body>
+    <main>
+        <p class="tagline">Where Shopping Is a Pleasure</p>
+        <h1>Publix Savings Calculator</h1>
+
+        <form id="discount-form">
+            <label for="total-input">Cart total ($):</label>
+            <input type="number" id="total-input" name="total-input" placeholder="e.g. 120" step="any" min="0" required>
+
+            <label class="checkbox-row" for="member-checkbox">
+                <input type="checkbox" id="member-checkbox" name="member-checkbox">
+                I have a Club Publix card
+            </label>
+
+            <button type="submit">Calculate My Savings</button>
+        </form>
+
+        <section id="result">
+            <p id="result-text">Enter a cart total above to see your savings.</p>
+        </section>
+    </main>
+
+    <script src="js/discount.js"></script>
+</body>
+</html>
