@@ -7,9 +7,9 @@
 </head>
 <body>
   <h1>Ask AI</h1>
+  <div id="chat"></div>
   <textarea id="prompt" placeholder="Ask AI anything..."></textarea>
   <button id="askBtn">Ask</button>
-  <p id="answer"></p>
 
   <script>
     // This page works only on your vercel.app link. Live Server and GitHub Pages
@@ -33,19 +33,43 @@
       return message.content[0].text;
     }
 
+    const chatEl = document.querySelector('#chat');
     const askBtn = document.querySelector('#askBtn');
+    const promptEl = document.querySelector('#prompt');
+
+    // Adds a new question/answer pair to the bottom of the chat and returns
+    // the element holding the answer text, so it can be filled in later.
+    function addEntry(question) {
+      const entry = document.createElement('div');
+      entry.className = 'entry';
+
+      const questionEl = document.createElement('p');
+      questionEl.className = 'question';
+      questionEl.textContent = 'Q: ' + question;
+
+      const answerEl = document.createElement('p');
+      answerEl.className = 'answer';
+      answerEl.textContent = 'Thinking...';
+
+      entry.append(questionEl, answerEl);
+      chatEl.append(entry);
+      // Scroll so the newest entry, added at the bottom, is visible.
+      entry.scrollIntoView({ block: 'end' });
+      return answerEl;
+    }
+
     askBtn.addEventListener('click', async () => {
-      const prompt = document.querySelector('#prompt').value;
-      const answerEl = document.querySelector('#answer');
+      const prompt = promptEl.value;
+      if (!prompt.trim()) return;
+      const answerEl = addEntry(prompt);
+      promptEl.value = '';
       // Turn the button off until the answer arrives, so a second click
       // cannot send, and pay for, a second request.
       askBtn.disabled = true;
-      // A call takes a few seconds, so show something while you wait.
-      answerEl.textContent = 'Thinking...';
       try {
         // textContent shows the answer as plain text. innerHTML would run any
         // HTML the model wrote.
-        answerEl.textContent = await askAI(prompt);
+        answerEl.textContent = 'A: ' + await askAI(prompt);
       } catch (error) {
         answerEl.textContent = 'Error: ' + error.message;
       } finally {
