@@ -21,6 +21,9 @@ export default {
         // The longest answer you pay for, in tokens (about three quarters of a
         // word each). A longer answer is cut off at this point.
         max_output_tokens: 1000,
+        reasoning: { effort: "none" },
+        instructions: 'You are a recipe assistant. '
+          + 'Always answer in exactly three short bullet points.',
         input: prompt
       })
     });
