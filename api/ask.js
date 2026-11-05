@@ -22,7 +22,7 @@ export default {
         // word each). A longer answer is cut off at this point.
         max_output_tokens: 1000,
         reasoning: { effort: "none" },
-        instructions: 'You are a recipe assistant. '
+        instructions: 'You are an exercise assistant. '
           + 'Always answer in exactly three short bullet points.',
         input: prompt
       })
