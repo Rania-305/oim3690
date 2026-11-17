@@ -11,6 +11,9 @@ Link: https://rania-305.github.io/Mini_Project_1/index.html
 ## Mini-Project 2
 Link: https://rania-305.github.io/Mini-Project-2/index.html
 
+## Mini-Project 3
+Link: https://rania-305.github.io/useful-tool/
+
 ```js
 const button = document.querySelector('#btn');
 button.addEventListener('click', () => {
