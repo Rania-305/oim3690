@@ -14,6 +14,9 @@ Link: https://rania-305.github.io/Mini-Project-2/index.html
 ## Mini-Project 3
 Link: https://rania-305.github.io/useful-tool/
 
+## Lightning Talk 2
+Link: https://rania-305.github.io/oim3690/lightningtalk2.html
+
 ```js
 const button = document.querySelector('#btn');
 button.addEventListener('click', () => {
